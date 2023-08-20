@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :games, only: %i(index new create show) do
     member do 
-      patch '/', action: :join, as: :join
+      post '/', action: :join, as: :join
     end
   end
   root "games#index"

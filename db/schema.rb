@@ -14,7 +14,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_20_040238) do
   create_table "game_users", force: :cascade do |t|
     t.integer "game_id", null: false
     t.integer "user_id", null: false
-    t.integer "team_id", null: false
+    t.integer "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
