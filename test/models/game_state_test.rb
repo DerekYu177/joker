@@ -7,12 +7,12 @@ class GameStateTest < ActiveSupport::TestCase
     winning_team = Team.new
     losing_team = Team.new
 
-    user_1 = GameUser.new(user: User.new(name: "1"), team: winning_team)
-    user_2 = GameUser.new(user: User.new(name: "2"), team: winning_team)
-    user_3 = GameUser.new(user: User.new(name: "3"), team: winning_team)
-    user_4 = GameUser.new(user: User.new(name: "4"), team: losing_team)
-    user_5 = GameUser.new(user: User.new(name: "5"), team: losing_team)
-    user_6 = GameUser.new(user: User.new(name: "6"), team: losing_team)
+    user_1 = Player.new(user: User.new(name: "1"), team: winning_team)
+    user_2 = Player.new(user: User.new(name: "2"), team: winning_team)
+    user_3 = Player.new(user: User.new(name: "3"), team: winning_team)
+    user_4 = Player.new(user: User.new(name: "4"), team: losing_team)
+    user_5 = Player.new(user: User.new(name: "5"), team: losing_team)
+    user_6 = Player.new(user: User.new(name: "6"), team: losing_team)
 
     @teams = [winning_team, losing_team]
     @game = GameState.new(teams: @teams, settings: Game.new)

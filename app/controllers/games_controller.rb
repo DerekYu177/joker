@@ -21,7 +21,7 @@ class GamesController < ApplicationController
     end
 
     if records
-      GameUser.create(user: user, game: game)
+      Player.create(user: user, game: game)
       # set the player in the session
       redirect_to game_path(game)
     else
@@ -33,7 +33,7 @@ class GamesController < ApplicationController
   def join
     user = User.new(**params.permit(:name))
     if user.save
-      GameUser.create(user: user, game: @game)
+      Player.create(user: user, game: @game)
       # set the player in the session
       redirect_to game_path(@game)
     else
