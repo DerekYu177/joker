@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class Game < ApplicationRecord
+  # a game is also analogous to a Room in chat parlence
+  # it will also hold the associations to messages and cards
+
   has_many :teams
   has_many :players
 

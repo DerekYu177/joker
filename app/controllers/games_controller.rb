@@ -18,6 +18,8 @@ class GamesController < ApplicationController
     records = ApplicationRecord.transaction do
       game.save!
       user.save!
+    rescue ActiveRecord::RecordInvalid
+      false
     end
 
     if records
@@ -37,7 +39,7 @@ class GamesController < ApplicationController
       # set the player in the session
       redirect_to game_path(@game)
     else
-      flash[:join_error] = user.errors.first.full_message 
+      flash[:join_error] = user.errors.first.full_message
       redirect_to games_path
     end
   end
