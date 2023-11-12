@@ -4,6 +4,7 @@ class Game < ApplicationRecord
   # a game is also analogous to a Room in chat parlence
   # it will also hold the associations to messages and cards
 
+  has_many :messages
   has_many :teams
   has_many :players
 

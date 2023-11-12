@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :games, only: %i(index new create show) do
     member do 
       post '/', action: :join, as: :join
+      resources :messages, only: %i(create)
     end
   end
   root "games#index"

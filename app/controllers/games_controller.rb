@@ -45,6 +45,7 @@ class GamesController < ApplicationController
   end
 
   def show
+    @messages = @game.messages
   end
 
   private

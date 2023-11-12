@@ -1,1 +1,11 @@
 <h1> Here! </h1>
+
+<main class="container">
+  <%= turbo_stream_from "messages" %>
+
+  <%= turbo_frame_tag "messages" do %>
+    <%= render @messages %>
+  <% end %>
+</main>
+
+
