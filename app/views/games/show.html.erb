@@ -1,11 +1,13 @@
-<h1> Here! </h1>
+<%= content_for(:game) do %>
+  <div class="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+    <h1> Here! </h1>
 
-<main class="container">
-  <%= turbo_stream_from "messages" %>
+    <%= turbo_stream_from "messages" %>
 
-  <%= turbo_frame_tag "messages" do %>
-    <%= render @messages %>
-  <% end %>
-</main>
+    <%= turbo_frame_tag "messages" do %>
+      <%= render @messages %>
+    <% end %>
 
-
+    <%= render("messages") %>
+  </div>
+<% end %>
