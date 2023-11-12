@@ -39,3 +39,6 @@
 
 # Ignore overmind
 .overmind.sock
+
+# Ignore redis configuration
+dump.rdb
